@@ -9,12 +9,9 @@ public class Turret : MonoBehaviour
     public Transform player;
     public GameObject TurretObject;
 
-    public int turretHitPoints = 3;
-
     public float speed = 1f;
 
     public bool isAttacking;
-    public bool isDamaged; // in the moment of hitting turret
     public bool isPlayerDetected;
 
     public Transform _originalPosition;
@@ -27,10 +24,10 @@ public class Turret : MonoBehaviour
 
     private void Awake()
     {
-        _detector.PlayerDetectionChange += _OnPlayerDetectionChange;
+        _detector.PlayerDetectionChange += OnPlayerDetectionChange;
     }
 
-    private void _OnPlayerDetectionChange(bool isPlayerDetected)
+    private void OnPlayerDetectionChange(bool isPlayerDetected)
     {
         this.isPlayerDetected = isPlayerDetected;
         if (isPlayerDetected)
@@ -55,16 +52,11 @@ public class Turret : MonoBehaviour
     void Start()
     {
         isAttacking = false;
-        isDamaged = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (turretHitPoints <= 0)
-        {
-            return;
-        }
     }
 
     void PerformEjectionUp()
