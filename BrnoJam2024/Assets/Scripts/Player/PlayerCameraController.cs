@@ -27,8 +27,6 @@ public class PlayerCameraController : MonoBehaviour
 			_player.transform.Rotate(_rotation * Time.deltaTime * _rotateCameraSpeed);
 		}
 		else _rotation.y = 0;
-
-		float mouseY = Input.GetAxis("Mouse Y");
 	}
 
 	private void LateUpdate()
