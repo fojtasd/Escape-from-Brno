@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 
-public class turret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     public Transform player;
 
     public int turretHitPoints = 3;
     public float detectionRadius = 10f;
-    public float ejectionHeight = 20f;
+    public float ejectionHeight = 2f;
     public float ejectionSpeed = 5f;
 
     public bool isAlarmed;
@@ -97,11 +97,11 @@ public class turret : MonoBehaviour
         if (_currentEjectionState == EjectionState.Above)
         {
             // Eject the tower up
-            EjectTower();
+            PerformEjection();
         }
     }
 
-    public void EjectTower()
+    public void PerformEjection()
     {
         Vector3 targetPosition = _originalPosition + Vector3.up * ejectionHeight;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, ejectionSpeed * Time.deltaTime);
@@ -110,9 +110,6 @@ public class turret : MonoBehaviour
             // Tower has finished ejection, do any additional actions here
             Debug.Log("Tower has finished ejection!");
         }
+        
     }
-
-    //fce pro chillovani turrety
-    //fce pro prechod turetu do attack modu
-    //fce pro
 }
