@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
@@ -6,32 +7,55 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public Transform player;
+    public GameObject TurretObject;
 
     public int turretHitPoints = 3;
-    public float detectionRadius = 10f;
-    public float ejectionHeight = 2f;
-    public float ejectionSpeed = 5f;
 
-    public bool isAlarmed;
+    public float speed = 1f;
+
     public bool isAttacking;
     public bool isDamaged; // in the moment of hitting turret
+    public bool isPlayerDetected;
 
-    public enum EjectionState
+    public Transform _originalPosition;
+    public Transform _target;
+
+    public TurretPlayerDetector _detector;
+
+    private Coroutine ejectionCoroutine;
+    private Coroutine deEjectionCoroutine;
+
+    private void Awake()
     {
-        Undergroud,
-        Above
+        _detector.PlayerDetectionChange += _OnPlayerDetectionChange;
     }
-    private EjectionState _currentEjectionState = EjectionState.Undergroud;
-    private Vector3 _originalPosition;
 
+    private void _OnPlayerDetectionChange(bool isPlayerDetected)
+    {
+        this.isPlayerDetected = isPlayerDetected;
+        if (isPlayerDetected)
+        {
+            Debug.Log("Player detected");
+            if (ejectionCoroutine == null)
+            {
+                PerformEjectionUp();
+            }
+        } else
+        {
+            Debug.Log("Not detected");
+            if (ejectionCoroutine == null)
+            {
+                PerformEjectionDown();
+            }
+            
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        isAlarmed = false;
         isAttacking = false;
         isDamaged = false;
-        _originalPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -41,75 +65,49 @@ public class Turret : MonoBehaviour
         {
             return;
         }
-        DetectPlayer();
-        React();
     }
 
-    void SetEjectionState(EjectionState newState)
+    void PerformEjectionUp()
     {
-        _currentEjectionState = newState;
-        switch (_currentEjectionState)
-        {
-            case EjectionState.Undergroud:
-                transform.position = _originalPosition;
-                break;
-            case EjectionState.Above:
-                isAttacking = true;
-                break;
-        }
+        ejectionCoroutine = StartCoroutine(EjectCoroutine());
     }
 
-    void DetectPlayer()
+    IEnumerator EjectCoroutine()
     {
-        if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
+        float elapsedTime = 0f;
+        while (elapsedTime < speed)
         {
-            isAlarmed = true;
+            TurretObject.transform.position = Vector3.Lerp(_originalPosition.position, _target.position, elapsedTime / speed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        else
+
+        ejectionCoroutine = null;
+        if (!isPlayerDetected)
         {
-            // Player is out of range, deactivate attack mode
-            isAlarmed = false;
+            deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
         }
     }
 
-    void React()
+    void PerformEjectionDown()
     {
-        if (isAlarmed)
-        {
-            if (_currentEjectionState == EjectionState.Undergroud)
-            {
-                SetEjectionState(EjectionState.Above);
-            }
-            else
-            {
-                // ATTACK!
-            }
-            Debug.Log("Tower is attacking!");
-        }
-        else
-        {
-            if (_currentEjectionState == EjectionState.Above)
-            {
-                SetEjectionState(EjectionState.Undergroud);
-            }
-        }
-
-        if (_currentEjectionState == EjectionState.Above)
-        {
-            // Eject the tower up
-            PerformEjection();
-        }
+        deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
     }
-
-    public void PerformEjection()
+    IEnumerator DeEjectCoroutine()
     {
-        Vector3 targetPosition = _originalPosition + Vector3.up * ejectionHeight;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, ejectionSpeed * Time.deltaTime);
-        if (transform.position == targetPosition)
+        float elapsedTime = 0f;
+        while (elapsedTime < speed)
         {
-            // Tower has finished ejection, do any additional actions here
-            Debug.Log("Tower has finished ejection!");
+            TurretObject.transform.position = Vector3.Lerp(_target.position, _originalPosition.position, elapsedTime / speed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        
+
+        deEjectionCoroutine = null;
+        if (isPlayerDetected)
+        {
+            ejectionCoroutine = StartCoroutine(EjectCoroutine());
+        }
     }
+
 }
