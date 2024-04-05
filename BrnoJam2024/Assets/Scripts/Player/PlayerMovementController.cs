@@ -28,10 +28,6 @@ public class PlayerMovementController : MonoBehaviour
 		{
 			_player.Rigidbody.velocity = _player.Rigidbody.velocity.normalized * _maxPlayerSpeed;
 		}
-		else if(_player.Rigidbody.velocity.magnitude > 0.25f)
-		{
-
-		}
 	}
 
 }
