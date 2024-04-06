@@ -77,9 +77,10 @@ GameObject:
   - component: {fileID: 7176653144712626944}
   - component: {fileID: 1274086146405118710}
   - component: {fileID: 4006816924932985144}
+  - component: {fileID: 5976602441403930604}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +121,7 @@ MonoBehaviour:
   _shieldPosition: {fileID: 914984319138256711}
   _rigidbody: {fileID: 4006816924932985144}
   _collector: {fileID: 5410420653675472783}
+  _playerDamageDetector: {fileID: 5976602441403930604}
 --- !u!54 &4006816924932985144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,6 +149,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5976602441403930604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004896928636695250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59380c5a76298c64696857f33d7786a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4720559777039444029
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +268,7 @@ GameObject:
   - component: {fileID: 3535307552156753290}
   m_Layer: 3
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

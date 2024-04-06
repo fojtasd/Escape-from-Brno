@@ -9,8 +9,11 @@ public class Player : MonoBehaviour
 	public Rigidbody Rigidbody => _rigidbody;
 	public Collector Collector => _collector;
 
+	public PlayerDamageDetector PlayerDamageDetector => _playerDamageDetector;
+
 	[SerializeField] private Transform _cameraPosition;
 	[SerializeField] private Transform _shieldPosition;
 	[SerializeField] private Rigidbody _rigidbody;
 	[SerializeField] private Collector _collector;
+	[SerializeField] private PlayerDamageDetector _playerDamageDetector;
 }

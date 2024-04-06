@@ -36,7 +36,6 @@ public class TurretShootingController : MonoBehaviour
 
 	private void _Shoot()
 	{
-		Debug.Log("shoot");
 		Projectile projectile = _projectilePooler.TryGet(_shootingOrigin.position, Quaternion.identity, _shootingOrigin);
 		projectile.ReturnInstanceAfterDuration(_recycleDuration);
 		projectile.Rigidbody.velocity = Vector3.zero;
