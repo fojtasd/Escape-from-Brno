@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuToIntro : MonoBehaviour
 {
-    void Update()
-    {
-    }
-
     public void StartNewGame()
     {
         SceneManager.LoadScene("IntroScreen");
