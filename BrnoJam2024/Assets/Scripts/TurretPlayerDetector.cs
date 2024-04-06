@@ -11,9 +11,6 @@ public class TurretPlayerDetector : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player detected");
-        Debug.Log(other.gameObject.name);
-        Debug.Log(other.tag);
         if (other.CompareTag(tag))
         {
             

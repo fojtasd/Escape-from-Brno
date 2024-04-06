@@ -32,14 +32,14 @@ public class Turret : MonoBehaviour
         this.isPlayerDetected = isPlayerDetected;
         if (isPlayerDetected)
         {
-            Debug.Log("Player detected");
+            //Debug.Log("Player detected");
             if (ejectionCoroutine == null)
             {
                 PerformEjectionUp();
             }
         } else
         {
-            Debug.Log("Not detected");
+            //Debug.Log("Not detected");
             if (ejectionCoroutine == null)
             {
                 PerformEjectionDown();
