@@ -6,100 +6,103 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public Transform player;
-    public GameObject TurretObject;
+	public const float MAX_HEALTH = 100f;
+	public bool CanShoot => _isPlayerDetected;
+	public float Health { get; private set; } = MAX_HEALTH;
 
-    public float speed = 1f;
+	public Transform player;
+	public GameObject TurretObject;
 
-    public bool isAttacking;
-    public bool isPlayerDetected;
+	public float speed = 1f;
 
-    public Transform _originalPosition;
-    public Transform _target;
+	private bool _isPlayerDetected;
 
-    public TurretPlayerDetector _detector;
+	public Transform _originalPosition;
+	public Transform _target;
 
-    private Coroutine ejectionCoroutine;
-    private Coroutine deEjectionCoroutine;
+	public TurretPlayerDetector _detector;
 
-    private void Awake()
-    {
-        _detector.PlayerDetectionChange += OnPlayerDetectionChange;
-    }
+	private Coroutine _ejectionCoroutine;
+	private Coroutine _deEjectionCoroutine;
 
-    private void OnPlayerDetectionChange(bool isPlayerDetected)
-    {
-        this.isPlayerDetected = isPlayerDetected;
-        if (isPlayerDetected)
-        {
-            Debug.Log("Player detected");
-            if (ejectionCoroutine == null)
-            {
-                PerformEjectionUp();
-            }
-        } else
-        {
-            Debug.Log("Not detected");
-            if (ejectionCoroutine == null)
-            {
-                PerformEjectionDown();
-            }
-            
-        }
-    }
+	private void Awake()
+	{
+		_detector.PlayerDetectionChange += OnPlayerDetectionChange;
+	}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        isAttacking = false;
-    }
+	public void Damage(float damage)
+	{
+		Health = Mathf.Clamp(Health - damage, 0f, MAX_HEALTH);
+		if(Health == 0f)
+		{
+			StopAllCoroutines();
+			gameObject.SetActive(false);
+		}
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+	private void OnPlayerDetectionChange(bool isPlayerDetected)
+	{
+		this._isPlayerDetected = isPlayerDetected;
+		if (isPlayerDetected)
+		{
+			//Debug.Log("Player detected");
+			if (_ejectionCoroutine == null)
+			{
+				PerformEjectionUp();
+			}
+		}
+		else
+		{
+			//Debug.Log("Not detected");
+			if (_deEjectionCoroutine == null)
+			{
+				PerformEjectionDown();
+			}
 
-    void PerformEjectionUp()
-    {
-        ejectionCoroutine = StartCoroutine(EjectCoroutine());
-    }
+		}
+	}
 
-    IEnumerator EjectCoroutine()
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < speed)
-        {
-            TurretObject.transform.position = Vector3.Lerp(_originalPosition.position, _target.position, elapsedTime / speed);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+	void PerformEjectionUp()
+	{
+		_ejectionCoroutine = StartCoroutine(EjectCoroutine());
+	}
 
-        ejectionCoroutine = null;
-        if (!isPlayerDetected)
-        {
-            deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
-        }
-    }
+	IEnumerator EjectCoroutine()
+	{
+		float elapsedTime = 0f;
+		while (elapsedTime < speed)
+		{
+			TurretObject.transform.position = Vector3.Lerp(_originalPosition.position, _target.position, elapsedTime / speed);
+			elapsedTime += Time.deltaTime;
+			yield return null;
+		}
 
-    void PerformEjectionDown()
-    {
-        deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
-    }
-    IEnumerator DeEjectCoroutine()
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < speed)
-        {
-            TurretObject.transform.position = Vector3.Lerp(_target.position, _originalPosition.position, elapsedTime / speed);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+		_ejectionCoroutine = null;
+		if (!_isPlayerDetected)
+		{
+			_deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
+		}
+	}
 
-        deEjectionCoroutine = null;
-        if (isPlayerDetected)
-        {
-            ejectionCoroutine = StartCoroutine(EjectCoroutine());
-        }
-    }
+	void PerformEjectionDown()
+	{
+		_deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
+	}
+	IEnumerator DeEjectCoroutine()
+	{
+		float elapsedTime = 0f;
+		while (elapsedTime < speed)
+		{
+			TurretObject.transform.position = Vector3.Lerp(_target.position, _originalPosition.position, elapsedTime / speed);
+			elapsedTime += Time.deltaTime;
+			yield return null;
+		}
+
+		_deEjectionCoroutine = null;
+		if (_isPlayerDetected)
+		{
+			_ejectionCoroutine = StartCoroutine(EjectCoroutine());
+		}
+	}
 
 }

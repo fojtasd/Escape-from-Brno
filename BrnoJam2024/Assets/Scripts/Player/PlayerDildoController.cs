@@ -11,7 +11,6 @@ public class PlayerDildoController : MonoBehaviour
 	[SerializeField] private float _swingLength = 0.5f;
 
 	private Vector3 _originalPosition;
-	private Vector3 _maximumPosition;
 	private Vector3 _minimumPosition;
 
 	private float _originHeight;
@@ -26,7 +25,6 @@ public class PlayerDildoController : MonoBehaviour
 		_originalPosition = _dildo.transform.position;
 		_originalPosition.y = _originHeight;
 		_minimumPosition = new Vector3(_originalPosition.x, _originalPosition.y - _swingLength, _originalPosition.z);
-		_maximumPosition = new Vector3(_originalPosition.x, _originalPosition.y + _swingLength, _originalPosition.z);
 	}
 
 	public void Downswing(float phase)

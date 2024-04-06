@@ -7,6 +7,7 @@ public class PlayerAttackState : AbstractState<PlayerStateMachine>
 	public override void EnterState(PlayerStateMachine context)
 	{
 		context.StartCoroutine(_AttackCoroutine(context.PlayerDildoController.SwingDuration, context));
+		context.PlayerDildoDamageController.Damage();
 	}
 
 	public override void ExitState(PlayerStateMachine context)
