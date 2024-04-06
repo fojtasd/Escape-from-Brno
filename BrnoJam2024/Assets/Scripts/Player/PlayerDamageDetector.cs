@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class PlayerDamageDetector : MonoBehaviour
 {
-	public event Action CollisionWithProjectile;
+	public event Action<Projectile> CollisionWithProjectile;
 
 	private void OnCollisionEnter(Collision collision)
 	{
 		if(collision.collider.CompareTag("Projectile"))
 		{
-			CollisionWithProjectile?.Invoke();
+			CollisionWithProjectile?.Invoke(collision.collider.GetComponent<Projectile>());
 		}
 	}
 
