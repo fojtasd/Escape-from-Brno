@@ -8,10 +8,12 @@ public class PlayerStateMachine : StateMachine<PlayerStateMachine>
 
 	public PlayerCoverController PlayerCoverController => _playerCoverController;
 	public PlayerDildoController PlayerDildoController => _playerDildoController;
+	public PlayerDildoDamageController PlayerDildoDamageController => _playerDildoDamageController;
 	public Player Player => _player;
 
 	[SerializeField] private PlayerCoverController _playerCoverController;
 	[SerializeField] private PlayerDildoController _playerDildoController;
+	[SerializeField] private PlayerDildoDamageController _playerDildoDamageController;
 	[SerializeField] private Player _player;
  
 	private PlayerIdleState _idleState = new PlayerIdleState();
@@ -26,6 +28,11 @@ public class PlayerStateMachine : StateMachine<PlayerStateMachine>
 	private void Update()
 	{
 		CurrentState.UpdateState(this);
+	}
+
+	public bool InCover()
+	{
+		return CurrentState == _coverState;
 	}
 
 	public void GoToCover()
