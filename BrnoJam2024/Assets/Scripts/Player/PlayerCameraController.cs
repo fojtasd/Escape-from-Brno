@@ -13,7 +13,7 @@ public class PlayerCameraController : MonoBehaviour
 
 	private Vector3 _rotation = Vector3.zero;
 
-	private void Start()
+	private void Awake()
 	{
 		_camera.transform.position = _player.CameraPosition.position;
 	}
