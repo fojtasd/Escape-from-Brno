@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921903338986233888}
   - component: {fileID: 2248961877536479791}
+  - component: {fileID: 3240911714588363363}
   m_Layer: 6
   m_Name: Turret
   m_TagString: Untagged
@@ -51,11 +52,28 @@ MonoBehaviour:
   player: {fileID: 0}
   TurretObject: {fileID: 5469550133344719842}
   speed: 0.3
-  isAttacking: 0
-  isPlayerDetected: 0
   _originalPosition: {fileID: 1234649017556154912}
   _target: {fileID: 5905655442518590321}
   _detector: {fileID: 7464974899746110260}
+--- !u!114 &3240911714588363363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922977857955416947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c56217027de1e4e9bcf11df66eba65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 8919733459156339901, guid: 4baf9c4ed0f8db24a8b076dc5cc9ac9e,
+    type: 3}
+  _cooldownDuration: 1
+  _projectileSpeed: 10000
+  _recycleDuration: 10
+  _shootingOrigin: {fileID: 7402895830242184107}
+  _turret: {fileID: 2248961877536479791}
 --- !u!1 &1664394483169010442
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +126,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 7.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7464974899746110260
 MonoBehaviour:
@@ -154,6 +172,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4921903338986233888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5434724607654110971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7402895830242184107}
+  m_Layer: 6
+  m_Name: ShootingOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7402895830242184107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5434724607654110971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.258, z: 0.685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4314750600078312446}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5469550133344719842
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +234,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5594653654264461460}
+  - {fileID: 7402895830242184107}
   m_Father: {fileID: 4921903338986233888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8121076175532425393

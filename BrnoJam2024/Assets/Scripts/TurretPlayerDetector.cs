@@ -21,7 +21,6 @@ public class TurretPlayerDetector : MonoBehaviour
     {
         if (other.CompareTag(tag))
         {
-            Debug.Log("Player not detected");
             PlayerDetectionChange?.Invoke(false);
         }
     }

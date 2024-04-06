@@ -6,21 +6,23 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    public bool CanShoot => _isPlayerDetected;
+
+
     public Transform player;
     public GameObject TurretObject;
 
     public float speed = 1f;
 
-    public bool isAttacking;
-    public bool isPlayerDetected;
+    private bool _isPlayerDetected;
 
     public Transform _originalPosition;
     public Transform _target;
 
     public TurretPlayerDetector _detector;
 
-    private Coroutine ejectionCoroutine;
-    private Coroutine deEjectionCoroutine;
+    private Coroutine _ejectionCoroutine;
+    private Coroutine _deEjectionCoroutine;
 
     private void Awake()
     {
@@ -29,18 +31,18 @@ public class Turret : MonoBehaviour
 
     private void OnPlayerDetectionChange(bool isPlayerDetected)
     {
-        this.isPlayerDetected = isPlayerDetected;
+        this._isPlayerDetected = isPlayerDetected;
         if (isPlayerDetected)
         {
             //Debug.Log("Player detected");
-            if (ejectionCoroutine == null)
+            if (_ejectionCoroutine == null)
             {
                 PerformEjectionUp();
             }
         } else
         {
             //Debug.Log("Not detected");
-            if (ejectionCoroutine == null)
+            if (_deEjectionCoroutine == null)
             {
                 PerformEjectionDown();
             }
@@ -48,20 +50,9 @@ public class Turret : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        isAttacking = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void PerformEjectionUp()
     {
-        ejectionCoroutine = StartCoroutine(EjectCoroutine());
+        _ejectionCoroutine = StartCoroutine(EjectCoroutine());
     }
 
     IEnumerator EjectCoroutine()
@@ -74,16 +65,16 @@ public class Turret : MonoBehaviour
             yield return null;
         }
 
-        ejectionCoroutine = null;
-        if (!isPlayerDetected)
+        _ejectionCoroutine = null;
+        if (!_isPlayerDetected)
         {
-            deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
+            _deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
         }
     }
 
     void PerformEjectionDown()
     {
-        deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
+        _deEjectionCoroutine = StartCoroutine(DeEjectCoroutine());
     }
     IEnumerator DeEjectCoroutine()
     {
@@ -95,10 +86,10 @@ public class Turret : MonoBehaviour
             yield return null;
         }
 
-        deEjectionCoroutine = null;
-        if (isPlayerDetected)
+        _deEjectionCoroutine = null;
+        if (_isPlayerDetected)
         {
-            ejectionCoroutine = StartCoroutine(EjectCoroutine());
+            _ejectionCoroutine = StartCoroutine(EjectCoroutine());
         }
     }
 
