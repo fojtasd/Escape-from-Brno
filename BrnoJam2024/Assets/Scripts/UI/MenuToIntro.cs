@@ -6,9 +6,15 @@ public class MenuToIntro : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            SceneManager.LoadScene("IntroScreen");
-        }
+    }
+
+    public void StartNewGame()
+    {
+        SceneManager.LoadScene("IntroScreen");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
