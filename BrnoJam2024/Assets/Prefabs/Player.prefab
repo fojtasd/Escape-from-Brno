@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7176653144712626944}
   - component: {fileID: 1274086146405118710}
   - component: {fileID: 4006816924932985144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2235083861477142643}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 8363303547724937056}
   - component: {fileID: 3303492550220499381}
   - component: {fileID: 3535307552156753290}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
