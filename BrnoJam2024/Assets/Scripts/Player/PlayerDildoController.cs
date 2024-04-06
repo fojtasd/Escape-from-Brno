@@ -7,23 +7,24 @@ public class PlayerDildoController : MonoBehaviour
 	public float SwingDuration => _swingDuration;
 
 	[SerializeField] private Dildo _dildo;
+	[SerializeField] private Player _player;
 	[SerializeField] private float _swingDuration = 0.35f;
 	[SerializeField] private float _swingLength = 0.5f;
 
 	private Vector3 _originalPosition;
 	private Vector3 _minimumPosition;
 
-	private float _originHeight;
-
 	private void Start()
 	{
-		_originHeight = _dildo.transform.position.y;
+		_originalPosition = _dildo.transform.position;
+		_originalPosition.y = _player.transform.position.y + 1.6f;
+		_dildo.transform.position = _originalPosition;
 	}
 
 	private void Update()
 	{
 		_originalPosition = _dildo.transform.position;
-		_originalPosition.y = _originHeight;
+		_originalPosition.y = _player.transform.position.y + 1.6f;
 		_minimumPosition = new Vector3(_originalPosition.x, _originalPosition.y - _swingLength, _originalPosition.z);
 	}
 

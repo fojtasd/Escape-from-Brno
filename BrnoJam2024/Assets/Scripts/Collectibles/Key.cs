@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Key : Collectible
@@ -21,11 +19,11 @@ public class Key : Collectible
 			case KeyEnum.GREEN:
 				color = Color.green;
 				break;
-			case KeyEnum.YELLOW:
-				color = Color.yellow;
+			case KeyEnum.BLUE:
+				color = Color.blue;
 				break;
 		}
 
-		_renderer.material.color = color; 
+		_renderer.material.color = color;
 	}
 }
