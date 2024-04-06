@@ -26,6 +26,7 @@ public class PickupController : MonoBehaviour
 		{
 			case Key key:
 				KeyPickup?.Invoke(key.KeyEnum);
+				_player.AddKey(key.KeyEnum);
 				break;
 		}
 	}

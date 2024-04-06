@@ -13,11 +13,32 @@ PrefabInstance:
       propertyPath: _key
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4332949567133495142, guid: 250c024536179d7418b178e7cc181f39,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332949567133495142, guid: 250c024536179d7418b178e7cc181f39,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332949567133495142, guid: 250c024536179d7418b178e7cc181f39,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6970100477815303900, guid: 250c024536179d7418b178e7cc181f39,
         type: 3}
       propertyPath: m_Name
       value: RedKey Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8039875510627307793, guid: 250c024536179d7418b178e7cc181f39,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1746453722517377774, guid: e218629d9ad0c86468d1d50f15d2da31,
+        type: 3}
     - target: {fileID: 9141381598464524482, guid: 250c024536179d7418b178e7cc181f39,
         type: 3}
       propertyPath: m_LocalPosition.x
