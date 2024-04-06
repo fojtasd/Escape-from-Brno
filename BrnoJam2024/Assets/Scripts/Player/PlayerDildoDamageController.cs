@@ -31,15 +31,12 @@ public class PlayerDildoDamageController : MonoBehaviour
 			StopCoroutine(_turretInRangeCoroutine);
 
 		_turretInRange = turret;
-		Debug.Log("Turret in range");
 	}
 
 	public void Damage()
 	{
-		Debug.Log("Pokus o damage");
 		if(_turretInRange != null)
 		{
-			Debug.Log("actual damage");
 			_turretInRange.Damage(_damage);
 		}
 	}

@@ -20,6 +20,13 @@ public class Dvere : MonoBehaviour
 	private void Awake()
 	{
 		_dvereTrigger.PlayerInTrigger += _OnPlayerInTrigger;
+		_dvereTrigger.PlayerOutsideTrigger += _OnPlayerOutsideTrigger;
+	}
+
+	private void _OnPlayerOutsideTrigger(Player player)
+	{
+		ClearKeyMissing?.Invoke(_requiredKey);
+	
 	}
 
 	private void _OnPlayerInTrigger(Player player)

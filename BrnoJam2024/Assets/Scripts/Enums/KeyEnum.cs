@@ -5,7 +5,7 @@ using UnityEngine;
 public enum KeyEnum
 {
 	RED,
-	YELLOW,
+	BLUE,
 	GREEN,
 	NONE
 }

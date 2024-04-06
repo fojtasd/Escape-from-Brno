@@ -7,7 +7,7 @@ public class GameScreenController : MonoBehaviour
 {
 	[Header("ELEMENTS")]
 	[SerializeField] private Image _redKeyImage;
-	[SerializeField] private Image _yellowKeyImage;
+	[SerializeField] private Image _blueKeyImage;
 	[SerializeField] private Image _greenKeyImage;
 	[SerializeField] private Image _healthbarForeground;
 	[SerializeField] private Transform _doorsParent;
@@ -48,8 +48,8 @@ public class GameScreenController : MonoBehaviour
 	{
 		switch (key)
 		{
-			case KeyEnum.YELLOW:
-				_yellowKeyImage.gameObject.SetActive(true);
+			case KeyEnum.BLUE:
+				_blueKeyImage.gameObject.SetActive(true);
 				break;
 			case KeyEnum.RED:
 				_redKeyImage.gameObject.SetActive(true);
