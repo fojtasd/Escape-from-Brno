@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerCoverController : MonoBehaviour
 {
 	[SerializeField] private Shield _shield;
-	[SerializeField] private Camera _camera;
-	[SerializeField] private Vector3 _offset;
 
 	private void Start()
 	{

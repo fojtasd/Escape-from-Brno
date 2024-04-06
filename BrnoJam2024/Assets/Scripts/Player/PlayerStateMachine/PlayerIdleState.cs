@@ -19,6 +19,14 @@ public class PlayerIdleState : AbstractState<PlayerStateMachine>
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
 			context.GoToCover();
+			return;
+		}
+
+
+		if (Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			context.GoToAttack();
+			return;
 		}
 	}
 }

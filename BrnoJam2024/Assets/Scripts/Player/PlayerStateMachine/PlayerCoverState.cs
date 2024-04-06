@@ -18,6 +18,13 @@ public class PlayerCoverState : AbstractState<PlayerStateMachine>
 		if(Input.GetKeyUp(KeyCode.Mouse1))
 		{
 			context.GoToIdle();
+			return;
+		}
+
+		if(Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			context.GoToAttack();
+			return;
 		}
 	}
 }
