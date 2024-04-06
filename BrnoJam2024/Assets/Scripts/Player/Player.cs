@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,22 @@ public class Player : MonoBehaviour
 
 	public PlayerDamageDetector PlayerDamageDetector => _playerDamageDetector;
 	public PlayerTurretContactDetector PlayerTurretContactDetector => _playerTurretContactDetector;
+
+	private List<KeyEnum> _keys = new List<KeyEnum>();
+
+	public void AddKey(KeyEnum key)
+	{
+		if (key == KeyEnum.NONE)
+			return;
+
+		if(!_keys.Contains(key))
+			_keys.Add(key);
+	}
+
+	public bool HasKey(KeyEnum key)
+	{
+		return _keys.Contains(key);
+	}
 
 	[SerializeField] private Transform _cameraPosition;
 	[SerializeField] private Transform _shieldPosition;

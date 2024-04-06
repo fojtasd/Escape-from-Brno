@@ -6,5 +6,6 @@ public enum KeyEnum
 {
 	RED,
 	YELLOW,
-	GREEN
+	GREEN,
+	NONE
 }
