@@ -15,18 +15,18 @@ public class PlayerMovementController : MonoBehaviour
 
 	private const float STEP_DELAY = 0.7f;
 
-	private void Update()
+	private void FixedUpdate()
 	{
-		if(_stepCooldown < STEP_DELAY)
+		if (_stepCooldown < STEP_DELAY)
 		{
-			_stepCooldown += Time.deltaTime;
+			_stepCooldown += Time.fixedDeltaTime;
 		}
 
 		float horizontalAxis = Input.GetAxis("Horizontal");
 		if (horizontalAxis != 0)
 		{
 			_player.Rigidbody.AddForce(horizontalAxis * _player.transform.right * _movementForce, ForceMode.Force);
-			if(_stepCooldown >= STEP_DELAY)
+			if (_stepCooldown >= STEP_DELAY)
 			{
 				PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.footSteps[Random.Range(0, _soundSettings.footSteps.Length)]);
 				_stepCooldown = 0f;
@@ -48,6 +48,11 @@ public class PlayerMovementController : MonoBehaviour
 		{
 			_player.Rigidbody.velocity = _player.Rigidbody.velocity.normalized * _maxPlayerSpeed;
 		}
+	}
+
+	private void Update()
+	{
+		
 	}
 
 }
