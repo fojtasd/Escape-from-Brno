@@ -3297,7 +3297,7 @@ PrefabInstance:
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.2
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
@@ -3307,7 +3307,7 @@ PrefabInstance:
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.9
+      value: -34.9
       objectReference: {fileID: 0}
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
@@ -9538,6 +9538,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 117402936}
     m_Modifications:
+    - target: {fileID: 1862700567315974856, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f587478094e0c554c884679e8adec6c6, type: 2}
     - target: {fileID: 2616673283408494199, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
         type: 3}
       propertyPath: m_Name
@@ -15661,6 +15666,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 117402936}
     m_Modifications:
+    - target: {fileID: 1862700567315974856, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c39493ef6eef12c469d65083cf53812a, type: 2}
     - target: {fileID: 2616673283408494199, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
         type: 3}
       propertyPath: m_Name
@@ -22564,6 +22574,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 117402936}
     m_Modifications:
+    - target: {fileID: 1862700567315974856, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4137e5f73031ac846b28a542fcb86ee2, type: 2}
     - target: {fileID: 2616673283408494199, guid: f9ff21a4e19cee44d9877cea5cbbdf40,
         type: 3}
       propertyPath: m_Name
