@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
 
 	public void PlayMusicLoop(AudioClip clip)
 	{
+		if (_musicSource == null)
+			return;
+
 		_musicSource.Stop();
 		_musicSource.clip = clip;
 		_musicSource.loop = true;
@@ -16,6 +19,9 @@ public class SoundManager : MonoBehaviour
 
 	public void PlaySoundLoop(AudioClip clip)
 	{
+		if(_soundSource == null)
+			return;
+
 		_soundSource.loop = true;
 		_PlaySound(clip, _soundSource);
 	}

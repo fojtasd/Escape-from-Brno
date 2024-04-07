@@ -3303,8 +3303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa74fbe88a3d32f4ea43cb74df28934e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementForce: 2000
-  _maxPlayerSpeed: 5
+  _movementForce: 3000
+  _maxPlayerSpeed: 13
   _player: {fileID: 230354198}
   _soundSettings: {fileID: 11400000, guid: 1554f4a66ad6756459a8ef15b02b7b61, type: 2}
 --- !u!1001 &962531050
