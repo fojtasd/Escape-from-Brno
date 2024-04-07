@@ -14,5 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuMusic: {fileID: 8300000, guid: dd784f566968ff44394d21ecc4fac9d0, type: 3}
   victoryMusic: {fileID: 8300000, guid: 0eb05c7fdcbd7bf4b8ed60af4c719ffc, type: 3}
-  defeatMusic: {fileID: 0}
-  gameMusic: {fileID: 8300000, guid: 32664c2bbf362e549a2a86c1183f8bf4, type: 3}
+  defeatMusic: {fileID: 8300000, guid: 0eb05c7fdcbd7bf4b8ed60af4c719ffc, type: 3}
+  gameMusic: {fileID: 8300000, guid: 9d0a12b7d25a51946b71863df899398f, type: 3}
+  swingClips:
+  - {fileID: 8300000, guid: 7c9df856449ab8c409e968debf399683, type: 3}
+  - {fileID: 8300000, guid: 93df16a5a4e9ce447be5adf8cf66e507, type: 3}
+  - {fileID: 8300000, guid: eb6300a9f2ae39245989addee4410909, type: 3}
+  - {fileID: 8300000, guid: 33dc1c77f38c4c3448ff5334d84cc917, type: 3}
+  turretShootClips:
+  - {fileID: 8300000, guid: 408d93ae6f765c7449ea3a1138e7c797, type: 3}
+  - {fileID: 8300000, guid: dbee536b5ae042e4b8eaa91a03fdeaf5, type: 3}
+  - {fileID: 8300000, guid: 5b6ab236b704d4f4cb8ef294fd7b2420, type: 3}
+  - {fileID: 8300000, guid: 0baadd8b710c6cf4a926cb9248e2a702, type: 3}
+  footSteps:
+  - {fileID: 8300000, guid: 15120b989a4d09c48b3d3e8262a61a2f, type: 3}
+  - {fileID: 8300000, guid: 9fd253f82bb58734ba5dde66176ac7ad, type: 3}
+  - {fileID: 8300000, guid: c747b832e7a40ce4fab4adf4e5236d70, type: 3}
+  - {fileID: 8300000, guid: 4af582fb8b7f02946bf5f8cc94714464, type: 3}
+  rozpadTurretu: {fileID: 0}
+  startTurretu: {fileID: 8300000, guid: 1ce62be32a08c3249aee5d0c3813f2c3, type: 3}

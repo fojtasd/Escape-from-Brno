@@ -11,6 +11,7 @@ public class TurretShootingController : MonoBehaviour
 	[SerializeField] private float _recycleDuration = 10f;
 	[SerializeField] private Transform _shootingOrigin;
 	[SerializeField] private Turret _turret;
+	[SerializeField] private SoundSettings _soundSettings;
 
 	private float _shootCooldown = 0f;
 	private IPooler<Projectile> _projectilePooler;
@@ -36,6 +37,7 @@ public class TurretShootingController : MonoBehaviour
 
 	private void _Shoot()
 	{
+		PersistenceManager.Instance.SoundManager.PlayAltSoundOnce(_soundSettings.turretShootClips[Random.Range(0, _soundSettings.turretShootClips.Length)]);
 		Projectile projectile = _projectilePooler.TryGet(_shootingOrigin.position, Quaternion.identity, _shootingOrigin);
 		projectile.ReturnInstanceAfterDuration(_recycleDuration);
 		projectile.Rigidbody.velocity = Vector3.zero;

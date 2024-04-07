@@ -10,6 +10,7 @@ public class PlayerDildoController : MonoBehaviour
 	[SerializeField] private Player _player;
 	[SerializeField] private float _swingDuration = 0.35f;
 	[SerializeField] private float _swingLength = 0.5f;
+	[SerializeField] private SoundSettings _soundSettings;
 
 	private Vector3 _originalPosition;
 	private Vector3 _minimumPosition;
@@ -32,6 +33,7 @@ public class PlayerDildoController : MonoBehaviour
 	{
 		Vector3 position = Vector3.Lerp(_originalPosition, _minimumPosition, phase);
 		_dildo.transform.position = position;
+		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.swingClips[Random.Range(0, _soundSettings.swingClips.Length)]);
 	}
 
 	public void BackToNormal(float phase)

@@ -8,4 +8,11 @@ public class SoundSettings : ScriptableObject
 	public AudioClip victoryMusic;
 	public AudioClip defeatMusic;
 	public AudioClip gameMusic;
+	// sound
+	public AudioClip[] swingClips;
+	public AudioClip[] turretShootClips;
+	public AudioClip[] footSteps;
+	public AudioClip rozpadTurretu;
+	public AudioClip startTurretu;
+	public AudioClip poskozeniTurretu;
 }

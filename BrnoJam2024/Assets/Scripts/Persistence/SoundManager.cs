@@ -23,12 +23,12 @@ public class SoundManager : MonoBehaviour
 	public void PlaySoundOnce(AudioClip clip)
 	{
 		//_soundSource.Stop();
-		_PlaySound(clip, _soundSource);
+		_soundSource.PlayOneShot(clip);
 	}
 
 	public void PlayAltSoundOnce(AudioClip clip)
 	{
-		_PlaySound(clip, _soundAltSource);
+		_soundAltSource.PlayOneShot(clip);
 	}
 
 	private void _PlaySound(AudioClip clip, AudioSource source)
