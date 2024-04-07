@@ -55,6 +55,7 @@ MonoBehaviour:
   _originalPosition: {fileID: 1234649017556154912}
   _target: {fileID: 5905655442518590321}
   _detector: {fileID: 7464974899746110260}
+  _soundSettings: {fileID: 11400000, guid: 1554f4a66ad6756459a8ef15b02b7b61, type: 2}
 --- !u!114 &3240911714588363363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,7 @@ MonoBehaviour:
   _recycleDuration: 10
   _shootingOrigin: {fileID: 7402895830242184107}
   _turret: {fileID: 2248961877536479791}
+  _soundSettings: {fileID: 11400000, guid: 1554f4a66ad6756459a8ef15b02b7b61, type: 2}
 --- !u!1 &1664394483169010442
 GameObject:
   m_ObjectHideFlags: 0

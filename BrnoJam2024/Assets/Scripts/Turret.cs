@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FMOD;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -25,6 +26,8 @@ public class Turret : MonoBehaviour
 	private Coroutine _ejectionCoroutine;
 	private Coroutine _deEjectionCoroutine;
 
+	[SerializeField] private SoundSettings _soundSettings;
+
 	private void Awake()
 	{
 		_detector.PlayerDetectionChange += OnPlayerDetectionChange;
@@ -33,10 +36,13 @@ public class Turret : MonoBehaviour
 	public void Damage(float damage)
 	{
 		Health = Mathf.Clamp(Health - damage, 0f, MAX_HEALTH);
-		if(Health == 0f)
+		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.poskozeniTurretu);
+		if (Health == 0f)
 		{
 			StopAllCoroutines();
 			gameObject.SetActive(false);
+
+			PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.rozpadTurretu);
 		}
 	}
 
@@ -69,6 +75,9 @@ public class Turret : MonoBehaviour
 
 	IEnumerator EjectCoroutine()
 	{
+
+		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.startTurretu);
+
 		float elapsedTime = 0f;
 		while (elapsedTime < speed)
 		{
