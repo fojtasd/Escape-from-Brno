@@ -13569,7 +13569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d301bc2b1ffea43458611b46d7b7c52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraAdjustRate: 0.15
+  _cameraAdjustRate: 0.35
   _rotateCameraSpeed: 500
   _player: {fileID: 230354198}
   _camera: {fileID: 330585545}
