@@ -10,6 +10,7 @@ public class SoundSettings : ScriptableObject
 	public AudioClip gameMusic;
 
 	public AudioClip spaceOdysseyMusic;
+	public AudioClip doorOpenClip;
 
 	// sound
 	public AudioClip[] swingClips;

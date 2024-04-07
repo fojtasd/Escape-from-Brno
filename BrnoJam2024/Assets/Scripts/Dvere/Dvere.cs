@@ -15,6 +15,7 @@ public class Dvere : MonoBehaviour
 	[SerializeField] private Transform _leftDoor;
 	[SerializeField] private Transform _rightDoor;
 	[SerializeField] private Renderer _okrajeDveriRenderer;
+	[SerializeField] private SoundSettings _soundSettings;
 
 	private bool _doorClosed = true;
 
@@ -65,6 +66,8 @@ public class Dvere : MonoBehaviour
 		_doorClosed = false;
 		float time = 0f;
 		float phase = 0f;
+
+		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.doorOpenClip);
 
 		Vector3 leftInitialPosition = _leftDoor.position;
 		Vector3 leftFinalPosition = _leftDoor.position + _rightDoor.right * _doorMovementAmount;

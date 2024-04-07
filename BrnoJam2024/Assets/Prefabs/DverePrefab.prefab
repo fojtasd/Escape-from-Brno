@@ -119,6 +119,7 @@ MonoBehaviour:
   _leftDoor: {fileID: 4650643350375037909}
   _rightDoor: {fileID: 1420847327244777941}
   _okrajeDveriRenderer: {fileID: 1862700567315974856}
+  _soundSettings: {fileID: 11400000, guid: 1554f4a66ad6756459a8ef15b02b7b61, type: 2}
 --- !u!1001 &4272574921481990858
 PrefabInstance:
   m_ObjectHideFlags: 0
