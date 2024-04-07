@@ -18,4 +18,5 @@ public class SoundSettings : ScriptableObject
 	public AudioClip rozpadTurretu;
 	public AudioClip startTurretu;
 	public AudioClip poskozeniTurretu;
+	public AudioClip[] playerDostavaDmg;
 }

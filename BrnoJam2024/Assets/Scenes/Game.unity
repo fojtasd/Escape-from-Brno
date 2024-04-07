@@ -7444,6 +7444,7 @@ MonoBehaviour:
   _projectileDamage: 20
   _player: {fileID: 230354198}
   _playerStateMachine: {fileID: 1068375387}
+  _soundSettings: {fileID: 11400000, guid: 1554f4a66ad6756459a8ef15b02b7b61, type: 2}
 --- !u!1001 &602013175
 PrefabInstance:
   m_ObjectHideFlags: 0
