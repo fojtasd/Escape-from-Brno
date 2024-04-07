@@ -9,6 +9,11 @@ public class MenuToIntro : MonoBehaviour
         SceneManager.LoadScene("IntroScreen");
     }
 
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
