@@ -19,13 +19,13 @@ public class PlayerHealthController : MonoBehaviour
 
 	private void _OnCollisionWithProjectile(Projectile projectile)
 	{
-		Vector3 directionToPlayer = (_player.transform.position - projectile.transform.position).normalized;
-		float signedAngle = Vector3.SignedAngle(_player.transform.forward, directionToPlayer, _player.transform.up);
+		//Vector3 directionToPlayer = (_player.transform.position - projectile.transform.position).normalized;
+		float signedAngle = Vector3.SignedAngle(_player.transform.forward, projectile.transform.forward, _player.transform.up);
 		Debug.Log(signedAngle + ": " +  _playerStateMachine.InCover().ToString());
 
 
 
-		if(signedAngle > 30  && signedAngle < 150 && _playerStateMachine.InCover()) // cover stitem funguje
+		if(Mathf.Abs(signedAngle) >= 130 && _playerStateMachine.InCover()) // cover stitem funguje
 		{
 			Debug.Log("Covered impact!");
 			return;
