@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
@@ -26,14 +27,16 @@ public class SoundManager : MonoBehaviour
 		_PlaySound(clip, _soundSource);
 	}
 
-	public void PlaySoundOnce(AudioClip clip)
+	public void PlaySoundOnce(AudioClip clip, float volume = 1f)
 	{
 		//_soundSource.Stop();
+		_soundSource.volume = volume;
 		_soundSource.PlayOneShot(clip);
 	}
 
-	public void PlayAltSoundOnce(AudioClip clip)
+	public void PlayAltSoundOnce(AudioClip clip, float volume = 1f)
 	{
+		_soundSource.volume = volume;
 		_soundAltSource.PlayOneShot(clip);
 	}
 
