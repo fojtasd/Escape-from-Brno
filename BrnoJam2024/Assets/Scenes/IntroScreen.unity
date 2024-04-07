@@ -818,8 +818,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1573794563}
   - {fileID: 1962356266}
+  - {fileID: 1573794563}
   m_Father: {fileID: 1963967885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -922,11 +922,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You woke up in the tunnels and don't remember anything. \nYou don't know
-    who you are, but you know you have to disappear from here quickly, because there's
-    still enough alcohol in your veins for now, but that will change as time goes
-    on. \nYou need to get out of here quickly and get to the store before your body
-    gets rid of the alcohol, and that means death."
+  m_text: 'You are in the tunnels and you remember being drugged, interrogated, and
+    beaten. You didn''t say anything. A fight broke out. Fortunately, you managed
+    to reach the hatch leading to these tunnels. You are naked, your head hurts,
+    and you have to run. Just another lovely day on the run from the authorities.
+
+    My
+    name is Fejk Blitzken, and my escape from Brno is just beginning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646b33aa1b07b114181ef7f17fc08a26, type: 2}
   m_sharedMaterial: {fileID: -242489852453910678, guid: 646b33aa1b07b114181ef7f17fc08a26,
