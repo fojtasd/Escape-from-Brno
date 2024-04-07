@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class PlayerHealthController : MonoBehaviour
 	[SerializeField] private Player _player;
 	[SerializeField] private PlayerStateMachine _playerStateMachine;
 
-	private void Awake()
+    [SerializeField] private SoundSettings _soundSettings;
+
+    private void Awake()
 	{
 		_player.PlayerDamageDetector.CollisionWithProjectile += _OnCollisionWithProjectile;
 	}
@@ -33,6 +36,7 @@ public class PlayerHealthController : MonoBehaviour
 
 		// jinak me to zrani
 		Health = Mathf.Clamp(Health - _projectileDamage, 0f, MAX_HEALTH);
-		HealthChange?.Invoke(Health);
+        PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.playerDostavaDmg[Random.Range(0, _soundSettings.playerDostavaDmg.Length)], 0.25f);
+        HealthChange?.Invoke(Health);
 	}
 }

@@ -35,3 +35,7 @@ MonoBehaviour:
   rozpadTurretu: {fileID: 8300000, guid: ec9fb3a5933252f4889d85f6a43c5902, type: 3}
   startTurretu: {fileID: 8300000, guid: 1ce62be32a08c3249aee5d0c3813f2c3, type: 3}
   poskozeniTurretu: {fileID: 8300000, guid: f032d7828d1432f4994f26228825ae1b, type: 3}
+  playerDostavaDmg:
+  - {fileID: 8300000, guid: 2a2cabdf26e4b514084f0077a38214fe, type: 3}
+  - {fileID: 8300000, guid: bd67c89f52450634ca58af445644d68c, type: 3}
+  - {fileID: 8300000, guid: 71fee3535f570174c91b4f60a9a645ab, type: 3}
