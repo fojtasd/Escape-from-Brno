@@ -9,21 +9,21 @@ public class Key : Collectible
 
 	private void Awake()
 	{
-		Color color = Color.white;
+		//Color color = Color.white;
 
-		switch(_key)
-		{
-			case KeyEnum.RED:
-				color = Color.red;
-				break;
-			case KeyEnum.GREEN:
-				color = Color.green;
-				break;
-			case KeyEnum.BLUE:
-				color = Color.blue;
-				break;
-		}
+		//switch(_key)
+		//{
+		//	case KeyEnum.RED:
+		//		color = Color.red;
+		//		break;
+		//	case KeyEnum.GREEN:
+		//		color = Color.green;
+		//		break;
+		//	case KeyEnum.BLUE:
+		//		color = Color.blue;
+		//		break;
+		//}
 
-		_renderer.material.color = color;
+		//_renderer.material.color = color;
 	}
 }
