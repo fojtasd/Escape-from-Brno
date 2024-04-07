@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 910, y: -490}
+  m_AnchoredPosition: {x: -25, y: 12}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &128934369
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press enter to start the game...
+  m_text: Press enter to return to main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646b33aa1b07b114181ef7f17fc08a26, type: 2}
   m_sharedMaterial: {fileID: -242489852453910678, guid: 646b33aa1b07b114181ef7f17fc08a26,
@@ -965,9 +965,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699732865}
-  - {fileID: 128934368}
   - {fileID: 66108711}
   - {fileID: 1042656452}
+  - {fileID: 128934368}
   m_Father: {fileID: 88599735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
