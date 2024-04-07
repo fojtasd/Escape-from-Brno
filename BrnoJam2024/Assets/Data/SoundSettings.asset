@@ -18,10 +18,10 @@ MonoBehaviour:
   gameMusic: {fileID: 8300000, guid: 9d0a12b7d25a51946b71863df899398f, type: 3}
   spaceOdysseyMusic: {fileID: 8300000, guid: 1b40a0c68cb499c43a0beb5992573a17, type: 3}
   swingClips:
-  - {fileID: 8300000, guid: 7c9df856449ab8c409e968debf399683, type: 3}
-  - {fileID: 8300000, guid: 93df16a5a4e9ce447be5adf8cf66e507, type: 3}
-  - {fileID: 8300000, guid: eb6300a9f2ae39245989addee4410909, type: 3}
-  - {fileID: 8300000, guid: 33dc1c77f38c4c3448ff5334d84cc917, type: 3}
+  - {fileID: 8300000, guid: 9ace6bb8c4361ff428b2d6fbf3f30ade, type: 3}
+  - {fileID: 8300000, guid: 747c1184d2e333447971e13d5fe673d6, type: 3}
+  - {fileID: 8300000, guid: 18d0890fcbf718744a2c6765d63749a7, type: 3}
+  - {fileID: 8300000, guid: bed1df5f16211fd4c9bf45acae6d4c0a, type: 3}
   turretShootClips:
   - {fileID: 8300000, guid: 408d93ae6f765c7449ea3a1138e7c797, type: 3}
   - {fileID: 8300000, guid: dbee536b5ae042e4b8eaa91a03fdeaf5, type: 3}

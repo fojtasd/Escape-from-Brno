@@ -33,7 +33,7 @@ public class PlayerDildoController : MonoBehaviour
 	{
 		Vector3 position = Vector3.Lerp(_originalPosition, _minimumPosition, phase);
 		_dildo.transform.position = position;
-		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.swingClips[Random.Range(0, _soundSettings.swingClips.Length)]);
+		PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.swingClips[Random.Range(0, _soundSettings.swingClips.Length)], 0.25f);
 	}
 
 	public void BackToNormal(float phase)

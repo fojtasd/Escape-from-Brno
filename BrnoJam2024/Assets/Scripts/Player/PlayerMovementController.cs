@@ -28,7 +28,7 @@ public class PlayerMovementController : MonoBehaviour
 			_player.Rigidbody.AddForce(horizontalAxis * _player.transform.right * _movementForce, ForceMode.Force);
 			if (_stepCooldown >= STEP_DELAY)
 			{
-				PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.footSteps[Random.Range(0, _soundSettings.footSteps.Length)]);
+				PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.footSteps[Random.Range(0, _soundSettings.footSteps.Length)], 0.25f);
 				_stepCooldown = 0f;
 			}
 		}
@@ -39,7 +39,7 @@ public class PlayerMovementController : MonoBehaviour
 			_player.Rigidbody.AddForce(verticalAxis * _player.transform.forward * _movementForce, ForceMode.Force);
 			if (_stepCooldown >= STEP_DELAY)
 			{
-				PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.footSteps[Random.Range(0, _soundSettings.footSteps.Length)]);
+				PersistenceManager.Instance.SoundManager.PlaySoundOnce(_soundSettings.footSteps[Random.Range(0, _soundSettings.footSteps.Length)], 0.25f);
 				_stepCooldown = 0f;
 			}
 		}

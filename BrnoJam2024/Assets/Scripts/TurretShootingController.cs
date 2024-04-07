@@ -37,7 +37,7 @@ public class TurretShootingController : MonoBehaviour
 
 	private void _Shoot()
 	{
-		PersistenceManager.Instance.SoundManager.PlayAltSoundOnce(_soundSettings.turretShootClips[Random.Range(0, _soundSettings.turretShootClips.Length)]);
+		PersistenceManager.Instance.SoundManager.PlayAltSoundOnce(_soundSettings.turretShootClips[Random.Range(0, _soundSettings.turretShootClips.Length)], 0.5f);
 		Projectile projectile = _projectilePooler.TryGet(_shootingOrigin.position, Quaternion.identity, _shootingOrigin);
 		projectile.ReturnInstanceAfterDuration(_recycleDuration);
 		projectile.Rigidbody.velocity = Vector3.zero;
