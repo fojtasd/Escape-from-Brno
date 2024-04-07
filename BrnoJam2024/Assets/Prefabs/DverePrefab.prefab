@@ -118,6 +118,7 @@ MonoBehaviour:
   _doorMovementDuration: 1
   _leftDoor: {fileID: 4650643350375037909}
   _rightDoor: {fileID: 1420847327244777941}
+  _okrajeDveriRenderer: {fileID: 1862700567315974856}
 --- !u!1001 &4272574921481990858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +192,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2491220725539846146, guid: b0ec94ae30cd0c94b8b9712857e8532b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 873ebbc7cb3eb6f4695ed51753902270, type: 2}
     - target: {fileID: 4135584543727283715, guid: b0ec94ae30cd0c94b8b9712857e8532b,
         type: 3}
       propertyPath: m_Layer
@@ -269,11 +275,17 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4, y: 6, z: 16}
-  m_Center: {x: 1.68, y: 0, z: 0}
+  m_Size: {x: 6, y: 12, z: 16}
+  m_Center: {x: 2.94, y: 0, z: 0}
 --- !u!4 &1420847327244777941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6269888792810632417, guid: b0ec94ae30cd0c94b8b9712857e8532b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4272574921481990858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1862700567315974856 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2491220725539846146, guid: b0ec94ae30cd0c94b8b9712857e8532b,
     type: 3}
   m_PrefabInstance: {fileID: 4272574921481990858}
   m_PrefabAsset: {fileID: 0}
@@ -314,5 +326,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4, y: 6, z: 16}
-  m_Center: {x: -1.69, y: 0, z: 0}
+  m_Size: {x: 6, y: 12, z: 16}
+  m_Center: {x: -2.99, y: 0, z: 0}

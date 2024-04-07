@@ -14,6 +14,7 @@ public class Dvere : MonoBehaviour
 	[SerializeField] private float _doorMovementDuration = 1f;
 	[SerializeField] private Transform _leftDoor;
 	[SerializeField] private Transform _rightDoor;
+	[SerializeField] private Renderer _okrajeDveriRenderer;
 
 	private bool _doorClosed = true;
 
@@ -21,6 +22,25 @@ public class Dvere : MonoBehaviour
 	{
 		_dvereTrigger.PlayerInTrigger += _OnPlayerInTrigger;
 		_dvereTrigger.PlayerOutsideTrigger += _OnPlayerOutsideTrigger;
+	}
+
+	private void Start()
+	{
+		Color color = Color.white;
+		switch(_requiredKey)
+		{
+			case KeyEnum.GREEN:
+				color = Color.green;
+				break;
+			case KeyEnum.RED:
+				color = Color.red;
+				break;
+			case KeyEnum.BLUE:
+				color = Color.blue;
+				break;
+		}
+
+		_okrajeDveriRenderer.material.color = color;
 	}
 
 	private void _OnPlayerOutsideTrigger(Player player)
