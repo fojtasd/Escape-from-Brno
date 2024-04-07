@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuMusic: {fileID: 8300000, guid: dd784f566968ff44394d21ecc4fac9d0, type: 3}
   victoryMusic: {fileID: 8300000, guid: 0eb05c7fdcbd7bf4b8ed60af4c719ffc, type: 3}
-  defeatMusic: {fileID: 8300000, guid: 0eb05c7fdcbd7bf4b8ed60af4c719ffc, type: 3}
+  defeatMusic: {fileID: 8300000, guid: 6d4f3df0269befe4fa30e505fc25cebf, type: 3}
   gameMusic: {fileID: 8300000, guid: 9d0a12b7d25a51946b71863df899398f, type: 3}
   swingClips:
   - {fileID: 8300000, guid: 7c9df856449ab8c409e968debf399683, type: 3}
@@ -31,5 +31,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9fd253f82bb58734ba5dde66176ac7ad, type: 3}
   - {fileID: 8300000, guid: c747b832e7a40ce4fab4adf4e5236d70, type: 3}
   - {fileID: 8300000, guid: 4af582fb8b7f02946bf5f8cc94714464, type: 3}
-  rozpadTurretu: {fileID: 0}
+  rozpadTurretu: {fileID: 8300000, guid: ec9fb3a5933252f4889d85f6a43c5902, type: 3}
   startTurretu: {fileID: 8300000, guid: 1ce62be32a08c3249aee5d0c3813f2c3, type: 3}
+  poskozeniTurretu: {fileID: 8300000, guid: f032d7828d1432f4994f26228825ae1b, type: 3}
