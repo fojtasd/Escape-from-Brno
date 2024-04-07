@@ -556,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.2
+      value: 38.3
       objectReference: {fileID: 0}
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
@@ -566,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33.4
+      value: 103.3
       objectReference: {fileID: 0}
     - target: {fileID: 7176653144712626944, guid: 6f940b4a574fb5e42b78b8d7886e50ae,
         type: 3}
@@ -1849,6 +1849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775868037}
   - component: {fileID: 775868038}
+  - component: {fileID: 775868039}
   m_Layer: 6
   m_Name: EndTrigger
   m_TagString: Untagged
@@ -1892,6 +1893,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 6, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &775868039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775868036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355b170f1ac76da499b3942f85bdd934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
