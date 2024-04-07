@@ -34,9 +34,11 @@ public class GameScreenController : MonoBehaviour
 		_keyMissingText.text = string.Empty;
 	}
 
-	private void _OnKeyMissing(KeyEnum key)
+	private void _OnKeyMissing(KeyEnum key, bool doorClosed)
 	{
-		_keyMissingText.text = $"YOU NEED TO COLLECT THE {key} KEY!";
+		if(doorClosed)
+			_keyMissingText.text = $"YOU NEED TO COLLECT THE {key} KEY!";
+		else _keyMissingText.text = $"{key} DOOR";
 	}
 
 	private void _OnHealthChange(float value)

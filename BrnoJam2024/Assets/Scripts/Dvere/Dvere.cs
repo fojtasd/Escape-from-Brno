@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Dvere : MonoBehaviour
 {
-	public event Action<KeyEnum> KeyMissing;
+	public event Action<KeyEnum, bool> KeyMissing;
 	public event Action<KeyEnum> ClearKeyMissing;
 
 	[SerializeField] private KeyEnum _requiredKey = KeyEnum.NONE;
@@ -57,7 +57,7 @@ public class Dvere : MonoBehaviour
 			return;
 		}
 
-		KeyMissing?.Invoke(_requiredKey);
+		KeyMissing?.Invoke(_requiredKey, _doorClosed);
 	}
 
 	private IEnumerator OpenDoors(float duration)
