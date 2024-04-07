@@ -16,6 +16,7 @@ MonoBehaviour:
   victoryMusic: {fileID: 8300000, guid: 0eb05c7fdcbd7bf4b8ed60af4c719ffc, type: 3}
   defeatMusic: {fileID: 8300000, guid: 6d4f3df0269befe4fa30e505fc25cebf, type: 3}
   gameMusic: {fileID: 8300000, guid: 9d0a12b7d25a51946b71863df899398f, type: 3}
+  spaceOdysseyMusic: {fileID: 8300000, guid: 1b40a0c68cb499c43a0beb5992573a17, type: 3}
   swingClips:
   - {fileID: 8300000, guid: 7c9df856449ab8c409e968debf399683, type: 3}
   - {fileID: 8300000, guid: 93df16a5a4e9ce447be5adf8cf66e507, type: 3}
